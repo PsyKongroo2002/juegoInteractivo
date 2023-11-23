@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/styles/laberinto-game.css">
+  <title>Juego de laberinto</title>
+</head>
+<body class="body">
+  <section class="game-screen-container">
+    <canvas class="game-screen" id="game"></canvas>
+  </section>
+	
+  <section class="movement-btns-container">
+    <button id="up" ></button>
+    <button id="left"></button>
+    <button id="right"></button>
+    <button id="down"></button>
+  </section>
+
+  <section class="game-stats-container">
+    <p class="a-game-stat">Vidas: <span class="a-game-stat--lives" id="lives"></span></p>
+    <p class="a-game-stat">Tiempo: ⌛ <span class="a-game-stat--time" id="time"></span></p>
+    <p class="a-game-stat">Record: 🏁 <span class="a-game-stat--record" id="record"></span></p>
+  </section>
+
+  <!-- Agregar el cuadro de texto para los comandos -->
+  <section class="command-input-container">
+    <!-- <label for="commandInput">Comandos:</label> -->
+    <input type="text" id="commandInput" placeholder="Escribe el comando">
+    <button id="executeButton">Ejecutar</button>
+
+    <button id="mostrarModal" type="button" onclick="muestraAyuda()">
+      <img src="assets/img/pregunta.png" alt="">
+    </button>
+
+    <div id="miModal" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h2 id="tituloAyuda">Información de Ayuda</h2>
+        <h3 id="mensaje-modal">¡Ayuda al robot a llegar a su punto de guardado! :D</h3>
+        <h3>Comandos</h3>
+        <p>Mover arriba: robot.moveUp</p>
+        <p>Mover abajo: robot.moveDown</p>
+        <p>Mover derecha: robot.moveRight</p>
+        <p>Mover izquierda: robot.moveLeft</p>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="assets/script/maps.js"></script>
+  <script src="assets/script/menus.js"></script>
+  <script src="assets/script/game.js"></script>
+</body>
+</html>

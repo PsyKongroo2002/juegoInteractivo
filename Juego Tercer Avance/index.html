@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Inicio</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+    <ul>
+        <li><a href="memory-game.html">Juego de memoria</a></li>
+        <li><a href="suma-binarios.html">Suma numeros binarios</a></li>
+        <li><a href="adivina-palabra.html">Adivina la palabra</a></li>
+        <li><a href="laberinto-game.html">Laberinto</a></li>
+
+        <div class="" id="cursor"></div>
+    </ul>
+
+    <!-- Scripts -->
+    <script async>        
+        let text = document.querySelectorAll('ul li a').forEach
+        (text => {
+            text.innerHTML = text.innerText.split('').map((letters, 
+            i) => `<span style="transition-delay:${i*40}ms;">${letters}</span>`).join('');
+        })
+
+        let cursor = document.querySelector('#cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 'px';
+        })
+    </script>
+
+</body>
+</html>

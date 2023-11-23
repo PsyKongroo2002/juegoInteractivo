@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Juego</title>
+    <link rel="stylesheet" href="assets/styles/estilos-memoryGame.css">
+</head>
+<header>
+    <a href="index.html">
+        <img src="assets/img/atras.png" id="regresar-btn" alt="">
+    </a>    
+</header>
+<body class="body-memory-game">
+    <div class="container-memory-game">
+        <h2 id="titulo-memory-game">Juego de Memoria</h2>
+        <div class="game"></div>
+        <button class="reset" onclick="window.location.reload();">Reiniciar Juego</button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Variable que contiene la ruta de las imagenes a utilizar
+        const imagePaths = ["assets/img/js.png", "assets/img/js.png", "assets/img/html.png", "assets/img/html.png", "assets/img/css.png", "assets/img/css.png", "assets/img/java.png", "assets/img/java.png", "assets/img/cpp.png", "assets/img/cpp.png", "assets/img/python.png", "assets/img/python.png", "assets/img/php.png", "assets/img/php.png", "assets/img/mysql.png", "assets/img/mysql.png"];
+
+        var shuffledImages = imagePaths.sort(() => Math.random() - 0.5);
+
+        for(var i=0; i<imagePaths.length; i++){
+            let box = document.createElement("div");
+            box.className = 'item';
+
+            // Crea un elemento de imagen y establece la fuente
+            const img = document.createElement("img");
+            img.src = shuffledImages[i];
+            box.appendChild(img);
+
+            box.onclick = function(){
+                this.classList.add("boxOpen");
+                setTimeout(function(){
+                    if(document.querySelectorAll('.boxOpen').length > 1){
+                        if(document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML){
+                            document.querySelectorAll('.boxOpen')[0].classList.add("boxMatch")
+                            document.querySelectorAll('.boxOpen')[1].classList.add("boxMatch")
+                            document.querySelectorAll('.boxOpen')[1].classList.remove("boxOpen")
+                            document.querySelectorAll('.boxOpen')[0].classList.remove("boxOpen")
+
+                            if(document.querySelectorAll('.boxMatch').length == 16){
+                                alert("¡Felicidades, has ganado!");
+                            }
+                        }
+                        else{
+                            document.querySelectorAll('.boxOpen')[1].classList.remove("boxOpen")
+                            document.querySelectorAll('.boxOpen')[0].classList.remove("boxOpen")
+                        }
+                    }
+                },500)
+            }
+
+            document.querySelector(".game").appendChild(box);
+        }
+
+
+    </script>
+</body>
+</html>

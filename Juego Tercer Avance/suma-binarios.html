@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de binarios</title>
+    <link rel="stylesheet" href="assets/styles/suma-binaria.css">
+</head>
+<header>
+    <a href="index.html">
+        <img src="assets/img/atras.png" id="regresar-btn" alt="">
+    </a>    
+</header>
+<body>
+    <h1>Suma binaria</h1>
+    <div class="container">
+        <!-- Lado izquierdo -->
+        <div class="izquierdo">
+            <div class="container-operacion">
+                <span id="suma"></span>
+                <span id="resultado" class="resultado"></span>
+            </div>
+            <span id="mensaje" class="mensaje">Excelente!</span>
+        </div>
+
+        <!-- Lado derecho -->
+        <div class="derecho">
+            <span id="op0" class="opcion" onclick="controlarResultado(this)"></span>
+            <span id="op1" class="opcion" onclick="controlarResultado(this)"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/script/sumaBinaria.js"></script>
+</body>
+</html>

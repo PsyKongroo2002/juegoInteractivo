@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la palabra</title>
+    <link rel="stylesheet" href="assets/styles/adivina-palabra.css">
+</head>
+<header>
+    <a href="index.html">
+        <img src="assets/img/atras.png" id="regresar-btn" alt="">
+    </a>    
+</header>
+<body>
+    
+    <section>
+        <h2>Adivina la palabra</h2>
+        <div class="" id="palabra">
+            <div class="letra">B</div>
+            <div class="letra">U</div>
+            <div class="letra">C</div>
+            <div class="letra">L</div>
+            <div class="letra">E</div>
+        </div>
+        <h3>Ayuda: <span id="ayuda">Se repite</span></h3>
+        <h3>Intentos restantes: <span id="intentos">5</span></h3>
+        <h3>Letras ingresadas: <span id="letrasIngresadas">A - S</span></h3>
+        <h3 id="mensaje"></h3>
+
+        <button onclick="cargarPalabra()">Nueva Palabra</button>
+    </section>
+
+    <script src="assets/script/adivinaPalabra.js"></script>
+</body>
+</html>

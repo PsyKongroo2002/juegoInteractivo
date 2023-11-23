@@ -1,0 +1,246 @@
+/* General Styles and Variables */
+:root {
+	--app-color: indigo;
+	--game-border: #ff6600;
+	--screen-color: #feff9d;
+	--btns-color: #fdef05;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Informacion Importante */
+.modal {
+	display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-contenido {
+	background-color: rgba(76, 0, 130, 0.745);
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+  }
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: #4CAF50;
+  text-decoration: none;
+  cursor: pointer;
+}
+#mensaje-modal {
+	font-size: 30px;
+	color: aqua;
+}
+
+#tituloAyuda{
+	text-align: center;
+	padding: 30px
+}
+
+h3{
+	padding-bottom: 20px;
+}
+
+/* Input */
+#commandInput {
+
+	width: 300px; /* Ancho del input */
+	padding: 10px; /* Espaciado interno */
+	margin: 10px 0; /* Espaciado externo (arriba y abajo) */
+	font-size: 16px; /* Tamaño de fuente */
+	border: 1px solid #ccc; /* Borde con color gris claro */
+	border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  #commandInput::placeholder {
+	color: #999; /* Color del texto del marcador de posición */
+  }
+  
+  #commandInput:focus {
+	border-color: #4CAF50; /* Cambia el color del borde al recibir foco */
+	box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Agrega una sombra al recibir foco */
+  }
+
+.modal{
+	
+}
+#mostrarModal {
+	background-color: indigo;
+	border: none;
+	width: 30px; /* Ajusta el ancho según tus necesidades */
+	height: 50px; /* Ajusta la altura según tus necesidades */
+	position: absolute;
+	top: 30px; /* Ajusta la distancia desde la parte superior */
+	right: 50px; /* Ajusta la distancia desde la derecha */
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s, transform 0.4s;
+}
+
+.modal-contenido h3{
+	padding: 10px;
+	font-size: 20px;
+	padding-bottom: 30px;
+}
+.modal-contenido p{
+	padding: 12px;
+	font-size: 30px;
+	color: black;
+	font-weight: 500;
+	background-color: white;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+#mostrarModal:hover {
+	transform: scale(1.2);
+}
+
+#executeButton {
+	padding: 10px 20px; /* Espaciado interno */
+	font-size: 16px; /* Tamaño de fuente */
+	text-align: center; /* Alineación del texto */
+	text-decoration: none; /* Sin subrayado de enlace */
+	display: inline-block; /* Hace que el botón se comporte como un elemento en línea */
+	cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+	border: 1px solid #333; /* Borde del botón */
+	border-radius: 5px; /* Bordes redondeados */
+	background-color: #fff; /* Color de fondo */
+	color: #333; /* Color del texto */
+	transition: background-color 0.3s, color 0.3s, transform 0.4s; /* Agrega una transición suave al color de fondo, texto y transformación */
+}
+
+#executeButton:hover {
+	background-color: #333; /* Cambia el color de fondo al pasar el cursor */
+	color: #fff; /* Cambia el color del texto al pasar el cursor */
+	transform: scale(1.1);	
+}
+
+
+/* Body */
+.body {
+	color: #fff;
+	background-color: var(--app-color);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+	display: flex;
+	align-items: center;
+	align-content: space-around;
+	justify-content: center;
+	
+	flex-wrap: wrap;
+	flex-direction: row;
+	
+	min-width: 100vw;
+	min-height: 100vh;
+	padding-top: 20px;
+}
+
+/* Game Screen */
+.game-screen-container {
+	position: relative;
+}
+.game-screen {
+	border-radius: 8px;
+	background-color: var(--screen-color);
+	border: 4px solid var(--game-border);
+}
+
+.game-menu {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	
+	top: 0;
+
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.game-menu__item {
+	
+}
+.game-menu__item--title {
+	color: black;
+}
+.game-menu__item--btn {
+	font-size: 15px;
+	padding: 10px 20px;
+}
+
+/* Movement Btns */
+.movement-btns-container {
+
+}
+
+.movement-btn {
+	width: 100px;
+	padding: 5px 20px;
+	font-size: 18px;
+	
+	border-radius: 8px;
+	border-color: var(--game-border);
+	background-color: var(--btns-color);
+}
+.movement-btn--up, .movement-btn--down { 
+	display: block;
+	margin: 0px auto;
+	font-size: 19px;
+}
+.movement-btn--left, .movement-btn--right, .movement-btn--down {
+	margin-top: 5px;
+}
+
+@media (min-height: 600px) {
+	.movement-btn { font-size: 3vh; }
+	.movement-btn--up, .movement-btn--down { font-size: calc(3vh + 1px); }
+}
+
+/* Game Stats */
+.game-stats-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.a-game-stat {
+	width: 100%;
+	margin: none;
+	display: block;	
+}
+
+/* Shared */
+.game-screen-container, .movement-btns-container, .game-stats-container {
+	width: fit-content;
+}
+.movement-btns-container, .game-stats-container {
+	margin: 20px 15px 0px;
+}
+
+/* Responsive */
+@media (min-width: 400px) {
+
+
+}
+
+.inactive {
+	display: none;
+}
